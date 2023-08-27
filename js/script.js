@@ -9,10 +9,18 @@ const displayData = phones => {
     // console.log(phones);
     const phoneContainer = document.getElementById('phone-container');
     phoneContainer.textContent = '';
+
+    const showMore = document.getElementById('show-more');
+    if (phones.length > 12) {
+        showMore.classList.remove('hidden')
+    } else {
+        showMore.classList.add('hidden');
+    }
+    phones = phones.slice(0, 12);
     phones.forEach(phone => {
         // console.log(phone);
         const phoneCard = document.createElement('div');
-        phoneCard.classList=`card bg-purple-300 shadow-xl p-10 mt-10`
+        phoneCard.classList = `card bg-purple-300 shadow-xl p-10 mt-10`
         phoneCard.innerHTML = `
        <div class="">
           <figure><img src="${phone.image}" alt="Shoes" /></figure>
@@ -25,13 +33,13 @@ const displayData = phones => {
          </div>
        </div>
        `
-       phoneContainer.appendChild(phoneCard);
+        phoneContainer.appendChild(phoneCard);
     })
 };
 
-const phoneSearch = () =>{
-        const inputFiled = document.getElementById('input-filed');
-        const inputText = inputFiled.value;
-        // console.log(inputText);
-        loadData(inputText);
+const phoneSearch = () => {
+    const inputFiled = document.getElementById('input-filed');
+    const inputText = inputFiled.value;
+    // console.log(inputText);
+    loadData(inputText);
 };
