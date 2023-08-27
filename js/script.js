@@ -1,22 +1,24 @@
-const loadData = async (inputText) => {
+const loadData = async (inputText, isShowAll) => {
     const res = await fetch(`https://openapi.programming-hero.com/api/phones?search=${inputText}`)
     const data = await res.json();
     const PhoneData = data.data;
-    displayData(PhoneData);
+    displayData(PhoneData, isShowAll);
 };
 
-const displayData = phones => {
+const displayData = (phones, showAll) => {
     // console.log(phones);
     const phoneContainer = document.getElementById('phone-container');
     phoneContainer.textContent = '';
 
     const showMore = document.getElementById('show-more');
-    if (phones.length > 12) {
+    if (phones.length > 12 && !showAll) {
         showMore.classList.remove('hidden')
     } else {
         showMore.classList.add('hidden');
     }
-    phones = phones.slice(0, 12);
+    if(!showAll){
+        phones = phones.slice(0, 12);
+    }
     phones.forEach(phone => {
         // console.log(phone);
         const phoneCard = document.createElement('div');
@@ -35,11 +37,26 @@ const displayData = phones => {
        `
         phoneContainer.appendChild(phoneCard);
     })
+    loading(false);
 };
 
-const phoneSearch = () => {
+const phoneSearch = (isShowAll) => {
     const inputFiled = document.getElementById('input-filed');
     const inputText = inputFiled.value;
     // console.log(inputText);
-    loadData(inputText);
+    loadData(inputText, isShowAll);
 };
+
+const loading = (isLoading) => {
+    const loading = document.getElementById('loading');
+    if (isLoading) {
+        loading.classList.remove('hidden');
+    } else {
+        loading.classList.add('hidden');
+    }
+}
+
+// show all button
+const showAll = () => {
+    phoneSearch(true);
+}

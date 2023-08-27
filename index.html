@@ -16,13 +16,19 @@
     <main class="container mx-auto ">
         <section class="mt-5 p-10 space-x-2">
             <input id="input-filed" type="text" placeholder="search here" class="input input-bordered w-full max-w-xs" />
-            <button onclick="phoneSearch()" class="btn btn-accent">Accent</button>
+            <button onclick="phoneSearch()" class="btn btn-accent">Search</button>
         </section>
-        <section>
+        <sectishowAllon>
+            <!-- loading -->
+            <div id="loading" class="text-center mt-40 hidden">
+                <span class="loading loading-spinner loading-lg"></span>
+            </div>
+            <!-- phone container -->
             <div id="phone-container" class="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
             </div>
-            <div>
-                <button id="show-more" class="btn btn-accent hidden">Accent</button>
+            <!-- show all -->
+            <div  id="show-more"  class="text-center my-10 hidden">
+                <button onclick="showAll()" id="show-all" class="btn btn-accent">show all</button>
             </div>
         </section>
     </main>
