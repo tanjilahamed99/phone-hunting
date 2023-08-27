@@ -10,14 +10,21 @@
 </head>
 
 <body>
-    <header class="">
-
+    <header>
+         <h1 class="text-center text-5xl text-purple-400">Phone Hunting</h1>
     </header>
-    <main>
-
+    <main class="container mx-auto ">
+        <section class="mt-5 p-10 space-x-2">
+            <input id="input-filed" type="text" placeholder="search here" class="input input-bordered w-full max-w-xs" />
+            <button onclick="phoneSearch()" class="btn btn-accent">Accent</button>
+        </section>
+        <section>
+            <div id="phone-container" class="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+            </div>
+        </section>
     </main>
     <footer>
-        
+
     </footer>
     <script src="js/script.js"></script>
 </body>
