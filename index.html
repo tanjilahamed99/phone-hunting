@@ -10,18 +10,28 @@
 </head>
 
 <body>
-    <header>
-        <h1 class="text-center text-5xl text-purple-400">Phone Hunting</h1>
+    <header class=" bg-gray-200 mx-auto">
+        <nav class="flex justify-between px-32 py-10">
+            <h2 class="text-2xl font-semibold">Hot Gadgets</h2>
+            <button class="btn bg-[#0D6EFD] text-white">Sign Up</button>
+        </nav>
+        <div class="banner text-center pb-16">
+            <h2 class="font-bold text-6xl">Apple Iphone 13 Pro Max</h2>
+            <p class="text-[#706F6F] font-normal mt-6">There are many variations of passages of Lorem Ipsum available, but the majority <br> have suffered
+                alteration in some form, by injected humou.</p>
+                <button class="btn bg-[#0D6EFD] text-white mt-8">Buy Now</button>
+        </div>
     </header>
-    <main class="container mx-auto ">
-        <section class="mt-5 p-10 space-x-2">
+    <main class="container mx-auto  mt-10">
+        <h1 class="text-center text-3xl font-semibold">Search your phone</h1>
+        <section class=" mt-8 text-center">
             <input id="input-filed" type="text" placeholder="search here"
-                class="input input-bordered w-full max-w-xs" />
-            <button onclick="phoneSearch()" class="btn btn-accent">Search</button>
+                class="input input-bordered w-full max-w-xs bg-gray-200" />
+            <button onclick="phoneSearch()" class="btn  bg-[#0D6EFD] text-white">Search</button>
         </section>
         <section>
             <!-- loading -->
-            <div id="loading" class="text-center mt-40 hidden">
+            <div id="loading" class="text-center mt-40 hidden ">
                 <span class="loading loading-spinner loading-lg"></span>
             </div>
             <!-- phone container -->
@@ -37,7 +47,7 @@
         <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
             <form method="dialog" class="modal-box">
                 <div id="phone-detail-container" class="space-y-2">
-        
+
                 </div>
             </form>
         </dialog>

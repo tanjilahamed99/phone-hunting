@@ -22,10 +22,10 @@ const displayData = (phones, showAll) => {
     phones.forEach(phone => {
         // console.log(phone);
         const phoneCard = document.createElement('div');
-        phoneCard.classList = `card bg-purple-300 shadow-xl p-10 mt-10`
+        phoneCard.classList = `card bg-purple-300 shadow-xl px-5 py-5 rounded-lg mt-10 bg-white border-2 shadow-none border-[#CFCFCF]`
         phoneCard.innerHTML = `
        <div class="">
-          <figure><img src="${phone.image}" alt="Shoes" /></figure>
+          <figure class="bg-gray-200 rounded-lg px-5 py-10"><img src="${phone.image}" alt="Shoes" /></figure>
           <div class="card-body text-center">
              <h2 class="text-2xl font-medium">${phone.phone_name}</h2>
              <p>There are many variations of passages of available, but the majority have suffered</p>
